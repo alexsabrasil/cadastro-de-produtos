@@ -1,0 +1,36 @@
+<!-- templates/list.html -->
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Lista de Produtos</title>
+    <link rel="stylesheet" href="./static/style.css">
+  </head>
+  <body>
+    {% include 'components/header.html' %}
+    
+    <div class="container">
+      <h1>Lista de Produtos</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for produto in produtos %}
+            <tr>
+              <td>{{ produto.nome }}</td>
+              <td>{{ produto.valor }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="{{ url_for('index') }}">Cadastrar novo produto</a>
+    </div>
+    <footer>
+      &copy; 2024 Codado com carinho por Alexsandra Tavares. Todos os direitos reservados | Prova Experimental.
+    </footer>
+  </body>
+</html>
